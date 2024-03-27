@@ -20,26 +20,22 @@ const swiper = new Swiper('.sample-slider', {
 })
 
 function show() {
-    let assideButtonOn = document.getElementById('on');
-    let assideButtonOff = document.getElementById('off');
-    let swiperSlides = document.querySelectorAll('.swiper-slide');
-    let swiperShow = [];
-    for (let i = 0; i < swiperSlides.length; i++) {
-        swiperShow = swiperSlides[i].style.display
-    }
+    const assideButtonOn = document.getElementById('on');
+    const swiperSlides = document.querySelectorAll('.swiper-slide');
+
     assideButtonOn.addEventListener('click', function(){
-        for(let i= 0; i < swiperSlides.length; i++){
-        swiperSlides[i].style.display = 'block'
+        this.classList.toggle('swap');
+        if (assideButtonOn.textContent === 'Показать всё') {
+            assideButtonOn.textContent = 'Скрыть';
+            for (let i = 0; i < swiperSlides.length; i++) {
+            swiperSlides[i].classList.add('visible');
         }
-        assideButtonOn.style.display = 'none';
-        assideButtonOff.style.display= 'block'
-    })
-    assideButtonOff.addEventListener('click', function(){
-        for(let i = 0; i < swiperSlides.length ; i++){
-            swiperSlides[i].style.display = swiperShow
+        } else {
+            assideButtonOn.textContent = 'Показать всё';
+            for (let i = 0; i < swiperSlides.length; i++) {
+                swiperSlides[i].classList.remove('visible'); 
+            }
         }
-        assideButtonOff.style.display = 'none'
-        assideButtonOn.style.display = 'block'
     })
 }
 
