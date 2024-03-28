@@ -213,9 +213,7 @@ display: flex;
     .swiper-slide:nth-of-type(n+7):nth-of-type(-n+11).visible {
       display: block; 
     }
-    .aside__button-off .asside__img-button{
-      transform: rotate(180deg);
-    }
+    
     
 }
 @media only screen and (min-width: 1121px){
@@ -323,14 +321,6 @@ display: flex;
   .swiper-slide:nth-of-type(n+9):nth-of-type(-n+11).visible{
     display: block;
   }
-  .aside__button-off{
-    position: absolute;
-    background-color: white;
-    border: white;
-    display: none;
-  }
-  .aside__button-off .asside__img-button{
-    transform: rotate(180deg);
-  }
+  
 }
 
